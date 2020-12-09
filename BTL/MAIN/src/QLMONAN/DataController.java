@@ -25,7 +25,7 @@ public class DataController {
     }
     public void OpenFileDToWrite(String fileName){   //false se mat du lieu khi chay lai
         try{
-            fileWriter = new FileWriter(fileName, false);
+            fileWriter = new FileWriter(fileName, true); //để true để lưu khi thêm món ăn
             buffereWriter = new BufferedWriter(fileWriter);
             printWriter = new PrintWriter(buffereWriter);
         }

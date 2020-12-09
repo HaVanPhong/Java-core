@@ -39,20 +39,22 @@ public class main {
         ArrayList<MonAn> dishes = (ArrayList<MonAn>) dataController.CreateDishFromData(DishFileName);
         ArrayList<taikhoan> taikhoans = dataController.CreateTaiKhoanFromData(TaiKhoanFile);
 
-        MonAn a1=new MonAn("ma1", "xuc xich", 10000);   dishes.add(a1);
-        MonAn a2=new MonAn("ma2", "lau nuong", 100000); dishes.add(a2);
-        MonAn a3=new MonAn("ma3", "thit bo", 105000);   dishes.add(a3);
-        MonAn a4=new MonAn("ma4", "ca kho", 200000);    dishes.add(a4);
-        MonAn a5=new MonAn("ma5", "thit ga", 199000);   dishes.add(a5);
-        MonAn a6=new MonAn("ma6", "bo kho", 990000);    dishes.add(a6);
-        MonAn a7=new MonAn("ma7", "Bun Ngan", 25000);   dishes.add(a7);
-        dataController.WriteDishToFile(DishFileName, a1);
-        dataController.WriteDishToFile(DishFileName, a2);
-        dataController.WriteDishToFile(DishFileName, a3);
-        dataController.WriteDishToFile(DishFileName, a4);
-        dataController.WriteDishToFile(DishFileName, a5);
-        dataController.WriteDishToFile(DishFileName, a6);
-        dataController.WriteDishToFile(DishFileName, a7);
+//        MonAn a1=new MonAn("ma1", "xuc xich", 10000);   //dishes.add(a1);
+//        MonAn a2=new MonAn("ma2", "lau nuong", 100000);// dishes.add(a2);
+//        MonAn a3=new MonAn("ma3", "thit bo", 105000);  // dishes.add(a3);
+//        MonAn a4=new MonAn("ma4", "ca kho", 200000);   // dishes.add(a4);
+//        MonAn a5=new MonAn("ma5", "thit ga", 199000);  // dishes.add(a5);
+//        MonAn a6=new MonAn("ma6", "bo kho", 990000);  //  dishes.add(a6);
+//        MonAn a7=new MonAn("ma7", "Bun Ngan", 25000); //  dishes.add(a7);
+
+
+//        dataController.WriteDishToFile(DishFileName, a1);
+//        dataController.WriteDishToFile(DishFileName, a2);
+//        dataController.WriteDishToFile(DishFileName, a3);
+//        dataController.WriteDishToFile(DishFileName, a4);
+//        dataController.WriteDishToFile(DishFileName, a5);
+//        dataController.WriteDishToFile(DishFileName, a6);
+//        dataController.WriteDishToFile(DishFileName, a7);
 
         ArrayList<bill> listBill=new ArrayList<>();
         ArrayList<MonAn> listma=new ArrayList<>();
@@ -118,7 +120,10 @@ public class main {
                             System.out.print("Nhập giá: ");
                             money = sc.nextDouble(); sc.nextLine();
                             MonAn dish = new MonAn(mm, tenMonAn, money);
+                            dishes.add(dish);
+
                             dataController.WriteDishToFile(DishFileName, dish);
+//                            dataController.UpdateDishToFile(dishes, DishFileName);
                             System.out.println("Thêm thành công");
                             break;
                         case 16://show món ăn
@@ -467,8 +472,8 @@ public class main {
                                 }while (s!=0);
 
                             }
-                            bill b2=new bill("HD_Online", hden, "", listma);
-                            KhachAnTaiCho khachAnTaiCho=new KhachAnTaiCho("KhachDB", taikhoans.get(isAcNow).getTenDn(), sb);
+                            bill b2=new bill("HD_Onl"+taikhoans.get(isAcNow).getTenDn(), hden, "", listma);
+                            KhachAnTaiCho khachAnTaiCho=new KhachAnTaiCho("KhachDB"+taikhoans.get(isAcNow).getTenDn(), taikhoans.get(isAcNow).getTenDn(), sb);
                             controler.WriteKhachAnTaiChoToFile(KhachAnTaiChoFile,khachAnTaiCho);
                             b2.Output();
                             System.out.println("***Vui long chuan bi so tien tuong ung :))");

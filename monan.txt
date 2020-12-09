@@ -1,1 +1,6 @@
-ma7|Bun Ngan|25000.0
+ma8|sotvang|20000.0
+ma9|pho bo|20000.0
+ma8|sotvang|20000.0
+ma9|pho bo|20000.0
+ma22|cha chan|20000.0
+ma99|pho ga ta|30000.0
